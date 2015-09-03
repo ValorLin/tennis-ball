@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Tennis Ball 3D</title>
+    <style>
+        body {
+            overflow: hidden;
+            margin: 0;
+        }
+
+        h1 {
+            font-family: cursive;
+            color: #0fbf0f;
+            text-align: center;
+        }
+
+        .tennis-ball {
+            width: 120px;
+            height: 120px;
+            background-image: url(tennis_ball.jpg);
+            background-position: 120px 120px;
+            border-radius: 50%;
+            position: absolute;
+            transform: translate(120px, 120px);
+            box-shadow:
+                -30px 30px 20px 1px rgba(0, 0, 0, 0.5),
+                -5px 5px 15px rgba(0, 0, 0, 0.4);
+            transition: all 1.5s ease;
+        }
+
+        .tennis-ball:after {
+            content: '';
+            display: block;
+            background-image:
+                radial-gradient(circle 200px at 95px 0, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.7)),
+                radial-gradient(circle 60px at 85px 30px, rgba(255, 255, 255, 0.5), rgba(0, 0, 0, 0));
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+<h1>Click To Move The Ball</h1>
+<div class="tennis-ball"></div>
+<script>
+    var ballEl = document.querySelector('.tennis-ball');
+    var x = 120;
+    var y = 120;
+
+    function setPosition(x, y) {
+        ballEl.style.backgroundPosition = x + 'px ' + y + 'px';
+        ballEl.style.transform = ' translate(' + x + 'px, ' + y + 'px)';
+    }
+
+    document.addEventListener('click', function (e) {
+        setPosition(e.clientX - 60, e.clientY - 60);
+    });
+</script>
+</body>
+</html>
