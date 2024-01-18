@@ -1,3 +1,3 @@
 # tennis-ball
 Tennis ball.
-See [DEMO](http://weilao.github.io/tennis-ball)
+See [DEMO](http://valorlin.github.io/tennis-ball)
